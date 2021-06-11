@@ -1,0 +1,39 @@
+<template>
+  <div>
+    <lightning-radio-group name="radioGroup" label="Search By" options={options} value={searchType}
+      onchange={handleRadioChange} required type="button"></lightning-radio-group>
+  </div>
+  <div class="slds-var-m-bottom_small">
+    <lightning-input type="text" value={searchValue} label="Search Book" placeholder="search here..."
+      onchange={searchKeyword}></lightning-input>
+  </div>
+  <lightning-button variant="success" label="Search" title="Successful action" onclick={handleSearchBook}
+    class="slds-var-m-left_x-small"></lightning-button>
+  <br />
+  <br />
+  <div>
+      <div class="slds-grid slds-wrap">
+        <template for:each={listOfBooks} for:item="book">
+
+          <div key={book.Id} class="slds-col slds-size_1-of-2">
+            <lightning-card >
+              <lightning-button variant="brand-outline" data-id={book.Id} data-status={book.Status__c} data-author={book.Author__c} data-title={book.Title__c} label="Select" slot="actions" onclick={getSelectedName}>
+              </lightning-button>
+              <p slot="title" class="slds-p-horizontal_small">{book.Title__c}</p>
+              <p class="slds-p-horizontal_small">{book.Author__c}</p>
+              <p class="slds-p-horizontal_small">{book.Status__c}</p>
+            </lightning-card>
+          </div>
+        </template>
+
+      </div>
+
+
+  </div>
+  <br/>
+  <div style="position:absolute; z-index:99 " class="elementHoldingHTMLContent" lwc:dom="manual"></div>
+  <br/>
+  <div>
+    <lightning-button variant="success" label="Borrow" title="Successful action" onclick={handleBorrowBook} ></lightning-button>
+  </div>
+</template>

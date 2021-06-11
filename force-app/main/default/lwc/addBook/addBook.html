@@ -1,0 +1,24 @@
+<template>
+  <div class="slds-var-m-bottom_small">
+    <lightning-input type="text"
+       value={searchValue}
+       label="Title"
+       placeholder="Title"
+       onchange={searchKeyword}
+       ></lightning-input>
+       <lightning-input type="text"
+       value={searchValue}
+       label="Author"
+       placeholder="Author"
+       onchange={searchKeyword}
+       ></lightning-input>
+       <lightning-input type="text"
+       value={searchValue}
+       label="Category"
+       placeholder="Category"
+       onchange={searchKeyword}
+       ></lightning-input>
+ </div>         
+ <lightning-button variant="success" label="Add Book" title="Successful action" onclick={handleSearchBook} class="slds-var-m-left_x-small"></lightning-button>
+    
+</template>

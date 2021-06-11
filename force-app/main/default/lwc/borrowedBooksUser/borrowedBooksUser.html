@@ -1,0 +1,15 @@
+<template>
+  <template for:each={listOfBooks} for:item="book">
+
+    <div key={book.Id} class="slds-col slds-size_1-of-2">
+      <lightning-card >
+        <p slot="title" class="slds-p-horizontal_small">{book.User__c}</p>
+        <p class="slds-p-horizontal_small">Book: {book.Book__r}</p>
+        <p class="slds-p-horizontal_small">Active Borrow: {book.Is_Borrow_Active__c}</p>
+        <p class="slds-p-horizontal_small">Return Date: {book.Return_Date__c}</p>
+        <p class="slds-p-horizontal_small">Fine: {book.Fine__c}</p>
+        <p class="slds-p-horizontal_small">Days overdue: {Days_Overdue__c}</p>
+      </lightning-card>
+    </div>
+  </template>
+</template>
